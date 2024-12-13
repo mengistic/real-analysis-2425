@@ -1,0 +1,83 @@
+
+
+\documentclass[10pt, a4paper]{article}
+
+
+
+
+%% https://tex.stackexchange.com/questions/59702/suggest-a-nice-font-family-for-my-basic-latex-template-text-and-math
+\input{../preamble.tex}
+
+
+\begin{document}
+
+
+%%% TD 0 %%%
+{\tdtitle{0}{Warm up exercises}}
+
+\begin{exercise}
+  Prove that \(\abs{x} = \max\{x, -x\}\).
+\end{exercise}
+
+\begin{exercise}[Maximum and minimum]
+  Let \(x,y\) be real numbers. Prove that 
+  \[\max\{x,y\} = \frac{x+y+\abs{x-y}}{2}, \]
+  and find a similar formular for \(\min\{x,y\}\).
+\end{exercise}
+
+\begin{exercise}
+  Let \(\epsilon>0\) and \(a,x\in\R\). Prove that
+  \(\abs{x-a}<\epsilon \iff a-\epsilon< x< a+\epsilon\).
+\end{exercise}
+
+\begin{exercise}[Triangle inequality]
+  Let \(x\) and \(y\) be real numbers.
+  \begin{enumerate}
+  \item Prove that \(\abs{x + y} \leq \abs{x} + \abs{y}\).
+  \item Prove that \(\abs{x - y} \geq \abs*{ \abs{x}-\abs{y} }\).
+  \item Let \(a_1, a_2, \dots, a_n\) be real numbers. Prove that
+    \[\abs{a_1+a_2+\cdots+a_n}\leq \abs{a_1}+\abs{a_2}+\cdots + \abs{a_n}.\]
+  \end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}[Cauchy inequality]\text{}
+  \begin{enumerate}
+  \item For all \(a,b \geq 0\), prove that \(a + b\geq 2\sqrt{ab}\).
+  \item (Generalized Cauchy inequality)
+    Let \(a_1,a_2,\dots,a_n\) be \emph{positive} real numbers. Prove that
+    \[\frac{a_1+a_2+\cdots+a_n}{n} \geq \sqrt[n]{a_1a_2\cdots a_n}.\]
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[Cauchy\textendash Schwarz inequality]
+  Let \(n\in\N\) and let \(a_1,\dots,a_n\) and \(b_1,\dots,b_n\) be real numbers.
+  Prove that
+  \[
+    (a_1b_1+\cdots +a_nb_n)^2 \leq (a_1^2+\cdots+a_n^2)(b_1^2+\cdots+b_n^2).
+  \]
+\end{exercise}
+
+
+
+
+\begin{exercise}[Bernoulli inequality]
+  Let \(n\in\N\). Prove that if \(a\geq -1\) then \[(1+a)^n \geq 1+na.\]
+\end{exercise}
+
+
+\begin{exercise}
+  Let \(\epsilon>0\) and \(x_0,y_0\in\R\). Suppose that \(x,y\) satisfy
+  \[
+    \abs{x-x_0}\leq\min\left\{1,~\frac{\epsilon}{2(1+\abs{y_0})}\right\}
+    \quad\text{and}\quad
+    \abs{y-y_0}\leq \frac{\epsilon}{2(1+\abs{x_0})}.
+  \]
+  Prove that \(\abs{xy - x_0y_0}\leq \epsilon\).
+\end{exercise}
+
+
+
+
+
+\end{document}

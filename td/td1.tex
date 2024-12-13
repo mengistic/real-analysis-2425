@@ -1,0 +1,149 @@
+\documentclass[10pt, a4paper]{article}
+\input{../preamble.tex}
+
+
+\begin{document}
+
+
+%%% TD 1 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\tdtitle{1}{Set of real numbers}}
+
+\begin{exercise}
+  We say the set \(A\subset\R\) is \emph{bounded} provided \(A\) is
+  both bounded above and bounded below.
+  Prove that %\(A\) is bounded \emph{if and only if} \(\exists M>0\) such that \(\forall a\in A,~ \abs{a}\leq M\).
+  \(
+    \text{A is bounded}\iff
+    \exists M>0,~\forall a\in A,~\abs{a}\leq M.
+  \)
+\end{exercise}
+
+\begin{exercise}
+  Determine whether the following sets are bounded below, or bounded above.
+  (\textsf{Note:} You are allowed to use \(\floor{\cdot}\) in this exercise.)
+  \begin{enumerate}
+  \item \(A = \{\frac{n}{2}+1 \colon n\in \N\}\)
+  \item \(B = \{\frac{n}{2}+1 \colon n\in \Z\}\)
+  \item \(C = \{\frac{1}{n} \colon n\in\N\}\)
+  \item \(D = \{ (-1)^n n \colon n\in\N\}\)
+  \item \(E = \{ x\in\R \colon x^2\leq 3\}\)
+    (\textsf{Indication:}
+    For the last exercise even though it is tempting to use the
+    \(\sqrt{\cdot}\) in order to solve for \(x\), you are advised \emph{not}
+    to use it. This is because up until now we haven't showed that the
+    \emph{number} \(\sqrt{3}\) exist or not.
+    )
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[Finding supremum and infimum]
+  (\textsf{Note:} You are allowed to use \(\floor{\cdot}\) in this exercise.)
+  \begin{enumerate}
+  \item Let \(A = (-\infty, 5]\). Prove that \(\sup A = 5\).
+  \item Let \(B = (2, \infty)\). Prove that \(\inf B = 2\).
+  \item Let \(C = (1, 3]\). Prove that \(\sup C = 3\) and \(\inf C=1\).
+  \item Let \(D = \{\frac{1}{n}\colon n\in\N\}\). Prove that \(\sup D=1\) and \(\inf D=0\).
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  Let \(x\in\R\) be a real number. Prove that there exists an integer
+  \(n\in\N\) such that \(nx > 1\).
+\end{exercise}
+\begin{exercise}
+  Let \(x,y\in\R\) be real numbers satisfying \(x<y\).
+  Prove that there exists an integer \(n\in\N\) such that
+  \(x + \frac1n < y.\)
+\end{exercise}
+
+\begin{exercise}[Existence of roots]
+  \text{}
+  \begin{enumerate}
+  \item
+    Let \(A = \{x\in\R \colon x^2 < 3\}\). Prove that \(A\) is bounded above and
+    \((\sup A)^2 = 3\).
+  \item 
+    Let \(n\in\N\) and \(a\in\R\) with \(a > 0\).
+    We denote the set  \(A = \{x\in\R \colon x^n < a\}\).
+    Prove that \(A\) is bounded above and \((\sup A)^n = a\).
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[Infimum]
+  The goal of this exercise is to prove that any subset of
+  \(\R\) that is bounded below has an infimum.
+  Let \(A\subset\R\) be a subset that is bounded below.
+  We denote
+  \[B = \{-a~ \colon a\in A\}.\]
+  \begin{enumerate}
+  \item Prove that \(B\) is bounded above. Let \(\beta = \sup B\).
+  \item Prove that \(\inf A = -\beta\). (Thus proving that infimum
+    of any set that is bounded below exists.)
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[Existence of integer part function]
+  Let \(x\in\R\). Prove that there exists a unique integer \(N\in\Z\)
+  satisfying \(N\leq x < N+1\). We denote this integer by \(N=\floor{x}\).
+\end{exercise}
+
+\begin{exercise}
+  Let \(x,y\in\R\) with \(y-x>1\). Prove that there exists an integer
+  \(m\in\Z\) such that \(x<m<y\).
+\end{exercise}
+
+\begin{exercise}
+  Prove that the set \(A = \{\frac{p}{2^n}\colon p\in\Z,~n\in\N\}\)
+  is dense in \(\R\).
+\end{exercise}
+
+\begin{exercise}
+  Prove that the set of irrational numbers \(\R\smallsetminus\Q\)
+  is dense in \(\R\).
+\end{exercise}
+
+
+%%% Solution
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \newpage
+% \setcounter{exercise}{0}
+
+
+% \begin{center}
+%   {\large\sffamily Solution}
+% \end{center}
+
+% \begin{exercise}
+%   We say the set \(A\subset\R\) is \emph{bounded} provided \(A\) is
+%   both bounded above and bounded below.
+%   Prove that 
+%   \(
+%     \text{A is bounded}\iff
+%     \exists M>0,~\forall a\in A,~\abs{a}\leq M.
+%   \)
+% \end{exercise}
+% \begin{proof}
+%   todo.
+% \end{proof}
+
+
+% \begin{exercise}
+%   Determine whether the following sets are bounded below, or bounded above.
+%   \begin{enumerate}
+%   \item \(A = \{\frac{n}{2}+1 \colon n\in \N\}\)
+%   \item \(B = \{\frac{n}{2}+1 \colon n\in \Z\}\)
+%   \item \(C = \{\frac{1}{n} \colon n\in\N\}\)
+%   \item \(D = \{ (-1)^n n \colon n\in\N\}\)
+%   \item \(E = \{ x\in\R \colon x^2\leq 3\}\)
+%   \end{enumerate}
+% \end{exercise}
+% \begin{proof}
+%   todo
+% \end{proof}
+
+
+
+
+\end{document}
