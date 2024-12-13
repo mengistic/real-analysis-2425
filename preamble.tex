@@ -1,0 +1,140 @@
+
+
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{mathtools}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+\usepackage{enumerate, enumitem}
+\usepackage{tikz}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[framemethod=TikZ]{mdframed}
+
+
+\def\theenumi{(\arabic{enumi})}
+\def\thefootnote{(\arabic{footnote})}
+
+
+
+\def\R{\mathbb{R}}
+\def\Q{\mathbb{Q}}
+\def\Z{\mathbb{Z}}
+\def\N{\mathbb{N}}
+
+% ==> Definition
+\mdfdefinestyle{mdDefinitionStyle}{
+  % roundcorner       = 0pt,
+  % linewidth         = 0.8pt,
+  skipabove         = 12pt,
+  innerbottommargin = 9pt,
+  skipbelow         = 2pt,
+  nobreak           = false,
+  % linecolor         = Gray,
+  % backgroundcolor   = TealBlue!8,
+}
+\declaretheoremstyle[
+  headfont      = {\sffamily\bfseries},
+  bodyfont      = {\normalfont},
+  mdframed      = {style=mdDefinitionStyle},
+  headpunct     = {\\[3pt]},
+  postheadspace = {0pt},
+  notefont      = {\normalfont\sffamily\small},
+  notebraces    = {~(}{)},
+]{mdDefinition}
+
+% ==> Theorem
+\mdfdefinestyle{mdTheoremStyle}{%
+  % linewidth           = 1pt,
+  skipabove           = 12pt,
+  frametitleaboveskip = 5pt,
+  frametitlebelowskip = 0pt,
+  skipbelow           = 2pt,
+  innertopmargin      = 5pt,
+  innerbottommargin   = 8pt,
+  nobreak             = false,
+  % linecolor           = Gray,
+  % backgroundcolor     = Apricot!10,
+}
+\declaretheoremstyle[
+  headfont      =\bfseries\sffamily,
+  headindent    =0pt,
+  bodyfont      =\itshape,
+  mdframed      ={style=mdTheoremStyle},
+  notefont      =\normalfont\sffamily\small,
+  notebraces    = {~(}{)},
+  headpunct     ={\(:\) },
+  postheadspace ={2pt},
+]{mdTheorem}
+
+
+
+\declaretheorem[style=mdDefinition, name={Definition}, ]{definition}
+\declaretheorem[style=mdTheorem, name={Theorem}]{theorem}
+% \declaretheorem{example}[name={\exampleName},style=mdExample, numberwithin=chapter]
+% \declaretheorem{exercise}[name={\exerciseName},style=mdExercise, numberwithin=chapter]
+
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercice}
+
+
+
+\renewcommand\epsilon{\varepsilon}
+\def\R{\mathbb{R}}
+\def\Q{\mathbb{Q}}
+\def\Z{\mathbb{Z}}
+\def\N{\mathbb{N}}
+\mathtoolsset{centercolon} % not work when using |mathpazo|
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\DeclarePairedDelimiterX\norm[1]\lVert\rVert{
+	\ifblank{#1}{\:\cdot\:}{#1}
+}
+
+
+
+\usepackage{geometry} %[showframe]
+\geometry{
+  top=25.4mm,         % 1 inch
+  bottom=41mm,        % 1.618 inches
+  left=38mm,          % 1.5 inches
+  right=38mm,         % 1.5 inches
+}
+
+% \geometry{
+%   top=25.4mm,         % 1 inch
+%   bottom=41mm,        % Golden ratio for bottom margin
+%   inner=25.4mm,       % Smaller inner margin (1 inch)
+%   outer=41mm,         % Larger outer margin (Golden ratio: 1.618 inches)
+%   bindingoffset=10mm  % Optional space for binding (adjust as needed)
+% }
+
+
+
+% \newcounter{tdcounter}
+\newcommand{\tdtitle}[2]{
+  \noindent\rule{\textwidth}{0.8pt}
+  \flushleft
+    {\slshape Royal University of Phnom Penh \hfill Elementary Real Analysis}\\
+    {\slshape Undergraduate Mathematics \hfill Class of 2024-2025}
+  \endflushleft
+  
+  \vspace{0.8mm}
+  \center
+  {\sffamily\large TD n\textdegree #1 ~\textendash~ #2}
+  \endcenter
+  \noindent\rule{\textwidth}{0.8pt}
+}
+
+
+
+% \renewcommand{\qedsymbol}{\(\blacksquare\)}
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+  \pushQED{\qed}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+\item\relax
+  {\sffamily #1\@addpunct{.}}\hspace\labelsep\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+}
+\makeatother
