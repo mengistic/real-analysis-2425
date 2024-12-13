@@ -1,0 +1,112 @@
+\documentclass[12pt]{article}
+
+\input{preamble.tex}
+\title{Elementary Real Analysis}
+\author{\textsc{Sivmeng HUN}}
+\date{32 Novembre 2024}
+
+\usepackage{hyperref}
+
+
+\begin{document}
+\maketitle
+
+\section{Completeness Property}
+
+\subsection{Relation between \(\N\) and \(\R\)}
+
+
+Here we assume that there exists \(\N\) a subset of \(\R\) with the following
+properties:
+\begin{enumerate}[label = {(\roman*).}]
+\item \(1\in\N\), and is the smallest element in \(\N\);
+\item If \(n\in\N\), then \(n+1\in\N\);
+\item If \(n,m\in\N\) such that \(n\neq m\), then
+  \(\abs{n-m}\geq 1\).
+\end{enumerate}
+
+\begin{theorem}[Archimedean Property]
+  The set \(\N\) is not bounded above. In other words,
+  for any \(x\in\R\), there exists \(n\in\N\) such that \(n>x\). 
+\end{theorem}
+\begin{proof}
+  Assume by contradiction that the above statement is wrong, that is
+  the set \(\N\) is bounded above.
+  Thus \(\alpha = \sup\N\) exists. By definition of supremum,
+  there is \(n\in\N\) so that
+  \[
+    n > \alpha - 1 \implies \alpha < n+1.
+  \]
+  However, this is a contradiction since \(n+1\in\N\) and \(\alpha\)
+  is supposed to be an upper bound of \(\N\).
+\end{proof}
+
+\begin{theorem}[Well-ordering property]
+  Any non-empty subset \(S\subset\N\) has a minimal element;
+  in other words \(\min S\in S\).
+\end{theorem}
+\begin{proof}
+  Let \(S\subset\N\) and \(S\neq\varnothing\). Since \(\N\) bounded below,
+  then so does \(S\). We conclude from completeness property that
+  \(\alpha = \inf S\in\R\) exists.
+  It suffices to prove that \(\alpha \in S\). Argue by contradiction and
+  suppose that \(\alpha\notin S\). In particular, \(\alpha\) is an a natural
+  number.
+  %
+  From definition of infimum, there is an element \(s\in S\) so that
+  \(\alpha \leq s<\alpha+1  \).
+  Moreover we cannot have \(\alpha=s\), since we assumed \(\alpha\notin S\).
+  Thus we have found \(s\in S\) such that
+  \[\alpha<s<\alpha+1.\]
+  Notice that \(s\) is a number that is greater than \(\alpha=\inf S\).
+  Using definition of infimum again, we conclude that there is
+  \(s'\in S\) with \(\alpha \leq s' < s\). Using the same argument as above,
+  we must have \(\alpha < s'\). Combining all inequalities, we obtain
+  \[\alpha < s' < s < \alpha+1. \]
+  Hence \(0< s-s' <  1\). This is a contradiction to the (iii) property
+  of \(\N\).
+\end{proof}
+
+
+
+\subsection{Relation between \(\Q\) and \(\R\)}
+
+\begin{theorem}[Density of \(\Q\) in \(\R\)]
+  For any two distinct real numbers \(x,y\in\R\) with \(x<y\),
+  there is a rational number \(r\in\Q\) satisfying
+  \(x<r<y\).
+\end{theorem}
+We say that a set \(A\subset\R\) is dense provided that
+for any \(x<y\), there exists \(a\in A\) with \(x<a<y\).
+From the above theorem, the set \(\Q\) has this exact property.
+In other words, this means that no matter how you choose \(x\) and \(y\),
+there is always an element in \(\Q\) sits between them.
+Visually, the elements of \(\Q\) are densely put into \(\R\),
+that is why we say \(\Q\) is dense in \(\R\).
+
+The machinery of the proof is to use Archimedean property.
+To shorten the proof a bit, we are going to use the fact that,
+for any two numbers that are strictly of distance 1 apart,
+there is an integer sits between them. This fact is left as
+an exercise, as you can see in
+\href{https://sivmeng.com/real-analysis-2425/td/td1.pdf}{\sffamily TD n\textdegree 1}.
+
+\begin{proof}
+  Let \(x<y\) be real numbers. From Archimedean property,
+  there is an natural number \(n\in\N\) such that \(n>\frac{1}{y-x}\).
+  Equivalently,
+  \[ny - nx >1.\]
+  Since \(ny\) and \(nx\) are strictly of distance 1 part,
+  there is an integer \(m\in\Z\) such that \(nx<m<ny\).
+  Thus
+  \[x < \frac{m}{n} < y.\]
+  Therefore, we have found a rational number \(\frac{m}{n}\)
+  that is between \(x\) and \(y\). This concludes the proof.
+\end{proof}
+
+
+
+
+
+
+\end{document}
